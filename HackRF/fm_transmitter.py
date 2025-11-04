@@ -17,11 +17,17 @@ print("Reading Audio")
 audio, fs = sf.read("test.wav")
 if audio.ndim > 1:
     audio = audio.mean(axis=1)  # make mono
+print(f"Number of Samples is {len(audio)}")
+# Okay, that's a few too many samples. Let's only take the first bit
+audio_length = 1000000
+if len(audio) > audio_length:
+    audio = audio[(len(audio)-audio_length)//2:(len(audio)+audio_length)//2]
 
 # Resample to match SDR sample rate
 print(f"Sampling rate is {fs}")
 SAMPLE_RATE = (2_000_000 // fs)*fs    # 2 MHz
 print("Resampling")
+print(f"Number of samples is {len(audio)*SAMPLE_RATE/fs}")
 num_samples = int(len(audio) * SAMPLE_RATE / fs)
 audio_resampled = resample(audio, num_samples)
 
