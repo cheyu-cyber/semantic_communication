@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Semantic_Segmentation_Network
 
 This repository implements a panoptic segmentation pipeline that fuses a **thing** segmenter (YOLO11-seg) with a **stuff** segmenter (EfficientViT-Seg) and augments results with depth and orientation estimates. The code includes:
@@ -61,3 +62,7 @@ Running depth **before** segmentation is only beneficial if you need depth-aware
 - Keep model-specific preprocessing in sync with training (color space, normalization, resize strategy).
 - Profile both models; consider batching or using TensorRT to meet latency targets.
 - Persist calibration and scaling metadata with predictions so downstream modules (tracking, planning) can correctly interpret contours, boxes, and depth.
+=======
+# semantic_communication
+BU MS EC601 Project
+>>>>>>> 8194e9acb1c6fa9974651d70d7f9448302c2da50
