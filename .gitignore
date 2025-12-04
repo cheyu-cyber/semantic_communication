@@ -3,6 +3,7 @@
 *keys.json
 *.pyc
 *.egg-info
+*.gif
 dist
 datasets
 pytorch_env
